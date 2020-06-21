@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
 import Status from "../Status/Status";
 import Forecast from "../Forecast/Forecast";
