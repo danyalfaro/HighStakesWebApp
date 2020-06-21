@@ -1,0 +1,30 @@
+.statusWrapper {
+  background-color: rgb(17, 17, 17);
+  display: flex;
+  flex-direction: column;
+  padding-top: 1%;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding-right: 10%;
+  padding-left: 10%;
+  padding-top: 10%;
+}
+
+.statusColor {
+  background-color: rgba(90, 231, 81, 0.19);
+  height: 8vh;
+}
+
+.statusColorLeft {
+  background-color: rgba(90, 231, 81, 0.79);
+  width: 3%;
+  height: 8vh;
+  float: left;
+}
+
+.statusText {
+  float: left;
+  width: 50%;
+  margin-left: 5%;
+  font-size: calc(28px + 2vmin);
+}

@@ -1,0 +1,32 @@
+.forecastWrapper {
+  background-color: rgb(17, 17, 17);
+  display: flex;
+  flex-direction: column;
+  padding-top: 1%;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding-right: 10%;
+  padding-left: 10%;
+  padding-top: 10%;
+}
+
+.forecastLine {
+  height: 2px;
+  background-color: #fff;
+  width: 70%;
+}
+
+.forecastValues {
+  padding-top: 5%;
+}
+
+.valuesLeft {
+  width: 50%;
+  float: left;
+  font-size: 200%;
+}
+
+.valuesRight {
+  width: 50%;
+  float: right;
+}
