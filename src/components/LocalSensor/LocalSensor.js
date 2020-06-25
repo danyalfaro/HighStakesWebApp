@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { AiOutlineFieldNumber } from "react-icons/ai";
+import { FaHashtag } from "react-icons/fa";
 import { WiHumidity } from "react-icons/wi";
 import { FaRulerVertical } from "react-icons/fa";
 import { FaTemperatureLow } from "react-icons/fa";
@@ -17,7 +17,7 @@ export default class LocalSensor extends Component {
         <div>
           <div className="sensorValues">
             <div className="sensorIcon">
-              <AiOutlineFieldNumber size={40} />
+              <FaHashtag size={40} />
             </div>
             <div className="sensorData">{this.props.activeStakes}</div>
           </div>

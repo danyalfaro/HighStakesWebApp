@@ -31,32 +31,7 @@ class App extends React.Component {
         overallWaterLevel: "3",
       },
     };
-    this.getCurrentWeather = this.getCurrentWeather.bind(this);
-    // this.getCurrentLocation = this.getCurrentLocation.bind(this);
   }
-
-  // getCurrentLocation() {
-  //   let currentComponent = this;
-  //   navigator.geolocation.getCurrentPosition(function (position) {
-  //     const currentLat = `${position.coords.latitude}`;
-  //     const currentLon = `${position.coords.longitude}`;
-  //     console.log(currentLat, currentLon);
-  //     currentComponent.setState({
-  //       currentLatitude: currentLat,
-  //       currentLongitude: currentLon,
-  //     });
-  //   });
-  // }
-
-  // getCurrentWeather() {
-  //   this.getCurrentLocation();
-  //   callCurrentWeather(
-  //     this.state.forecast.currentLatitude,
-  //     this.state.forecast.currentLongitude
-  //   );
-  // }
-
-  getCurrentWeather() {}
 
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(
@@ -88,7 +63,7 @@ class App extends React.Component {
       },
 
       (error) => {
-        this.props.displayError("Error dectecting your location");
+        // this.props.displayError("Error dectecting your location");
         console.error(JSON.stringify(error));
       },
       { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
@@ -100,7 +75,6 @@ class App extends React.Component {
       <div className="App">
         <header className="appHeader">Welcome to High Stakes</header>
         <Status status={this.state.currentStatus} />
-        {this.getCurrentWeather()}
         <Forecast
           temperature={this.state.forecast.cityTemperature}
           precipitation={this.state.forecast.cityPrecipitation}
