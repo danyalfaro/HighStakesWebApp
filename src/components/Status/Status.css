@@ -7,7 +7,7 @@
   color: white;
   padding-right: 10%;
   padding-left: 10%;
-  padding-top: 10%;
+  padding-top: 8vh;
 }
 
 .statusColor {
@@ -26,5 +26,5 @@
   float: left;
   width: 50%;
   margin-left: 5%;
-  font-size: calc(28px + 2vmin);
+  font-size: 5.5vh;
 }

@@ -7,13 +7,14 @@
   color: white;
   padding-right: 10%;
   padding-left: 10%;
-  padding-top: 10%;
+  padding-top: 6vh;
 }
 
 .localLine {
   height: 2px;
   background-color: #fff;
   width: 70%;
+  margin-bottom: 4vh;
 }
 
 .sensorContainer {
