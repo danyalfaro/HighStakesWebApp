@@ -1,11 +1,13 @@
 .App {
   height: 100vh;
-  background-color: rgb(17, 17, 17);
+  background-image: linear-gradient(
+    rgba(0, 22, 50, 100),
+    rgba(35, 44, 64, 100)
+  );
   font-family: "Raleway", sans-serif;
 }
 
 .appHeader {
-  background-color: rgb(17, 17, 17);
   display: flex;
   flex-direction: column;
   align-items: center;

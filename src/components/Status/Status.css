@@ -1,5 +1,4 @@
 .statusWrapper {
-  background-color: rgb(17, 17, 17);
   display: flex;
   flex-direction: column;
   padding-top: 1%;
@@ -7,7 +6,7 @@
   color: white;
   padding-right: 10%;
   padding-left: 10%;
-  padding-top: 8vh;
+  padding-top: 5vh;
 }
 
 .statusColor {

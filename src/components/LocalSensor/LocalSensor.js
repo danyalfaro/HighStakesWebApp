@@ -31,7 +31,7 @@ export default class LocalSensor extends Component {
             <div className="sensorIcon">
               <WiHumidity size={40} />
             </div>
-            <div className="sensorData">{this.props.overallHumidity}%</div>
+            <div className="sensorData">{this.props.overallHumidity}</div>
           </div>
           <div className="sensorName">Overall Humidity</div>
         </div>
@@ -55,7 +55,7 @@ export default class LocalSensor extends Component {
             <div className="sensorIcon">
               <FaTemperatureLow size={40} />
             </div>
-            <div className="sensorData">{this.props.overallTemperature}"</div>
+            <div className="sensorData">{this.props.overallTemperature}</div>
           </div>
           <div className="sensorName">Overall Temperature</div>
         </div>

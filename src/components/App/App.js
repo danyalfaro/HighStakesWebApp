@@ -73,8 +73,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <header className="appHeader">Welcome to High Stakes</header>
-        <Status status={this.state.currentStatus} />
+        <header className="appHeader">High Stakes</header>
+        <Status
+          status={this.state.currentStatus}
+          forecast={this.state.forecast}
+        />
         <Forecast
           temperature={this.state.forecast.cityTemperature}
           precipitation={this.state.forecast.cityPrecipitation}
