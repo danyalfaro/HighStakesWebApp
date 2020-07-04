@@ -27,7 +27,7 @@ export function calculateStatus(forecast, localSensor) {
 
 //Threshold is optional since default is set to 2
 function calculateSeverity(localSensorVal, forecastVal, threshold = 2) {
-  if (Math.abs(localSensorVal - forecastVal) >= threshold * 2) {
+  if (Math.abs(localSensorVal - forecastVal) > threshold * 2) {
     return "ALERT";
   } else if (Math.abs(localSensorVal - forecastVal) > threshold) {
     return "WARNING";

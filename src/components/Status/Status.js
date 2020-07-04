@@ -10,25 +10,57 @@ export default class Status extends Component {
     };
   }
 
-  // componentDidUpdate(prevProps, prevState) {
-  //   const cityTemp = this.props.forecast.cityTemperature;
-  //   console.log(cityTemp);
-  //   const localTemp = this.props.localSensors.overallTemperature;
-  //   console.log(localTemp);
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.severityArray !== this.props.severityArray) {
+      let statusArray = [];
+      this.props.severityArray.forEach((stake) => {
+        console.log("Current Stake: ", stake);
+        console.log("Starting statusArray: ");
+        console.log(statusArray);
+        statusArray = statusArray.concat(Object.values(stake));
+        console.log("Ending statusArray: ");
+        console.log(statusArray);
 
-  //   console.log("prevState: ", prevState);
+        let statusResult = "STABLE";
+        statusArray.forEach((val) => {
+          if (val === "ALERT") {
+            statusResult = "ALERT";
+            return;
+          } else if (val === "WARNING") {
+            statusResult = "WARNING";
+          }
+        });
+        this.setState({ status: statusResult });
+      });
+    }
+  }
 
-  //   if (prevProps.forecast !== this.props.forecast) {
-  //     console.log("Vamo a vel");
-  //   }
-  // }
+  statusColor() {
+    if (this.state.status === "ALERT") {
+      return "statusAlert";
+    } else if (this.state.status === "WARNING") {
+      return "statusWarning";
+    } else if (this.state.status === "STABLE") {
+      return "statusStable";
+    }
+  }
+
+  statusColorLeft() {
+    if (this.state.status === "ALERT") {
+      return "statusAlertLeft";
+    } else if (this.state.status === "WARNING") {
+      return "statusWarningLeft";
+    } else if (this.state.status === "STABLE") {
+      return "statusStableLeft";
+    }
+  }
 
   render() {
     return (
       <div className="statusWrapper">
         <div className="statusHeader">Current Status:</div>
-        <div className="statusColor">
-          <div className="statusColorLeft"></div>
+        <div className={this.statusColor()}>
+          <div className={this.statusColorLeft()}></div>
           <div className="statusText">{this.state.status}</div>
         </div>
         <div className="statusTimeStamp">

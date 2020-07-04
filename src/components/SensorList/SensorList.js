@@ -8,6 +8,43 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 export default class SensorList extends Component {
+  // constructor(props){
+  //   super(props)
+  //   this.state = {
+
+  //   }
+  // }
+  checkStatus(stake) {
+    // temperature: "79", humidity: "82", waterLevel: "1"
+    if (
+      stake.temperatureSeverity === "ALERT" ||
+      stake.humiditySeverity === "ALERT" ||
+      stake.waterLevelSeverity === "ALERT"
+    ) {
+      return 2;
+    } else if (
+      stake.temperatureSeverity === "WARNING" ||
+      stake.humiditySeverity === "WARNING" ||
+      stake.waterLevelSeverity === "WARNING"
+    ) {
+      return 1;
+    } else return 0;
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    this.props.severityArray.forEach((stake) => {
+      console.log(stake);
+      let value = this.checkStatus(stake);
+      if (value === 2) {
+        console.log("ALEEEEEEEERT!");
+      } else if (value === 1) {
+        console.log("WARNIIIIIIIIING!");
+      } else if (value === 0) {
+        console.log("STAAAAABLE!");
+      }
+    });
+  }
+
   render() {
     return (
       <div className="localWrapper">

@@ -26,9 +26,9 @@ class App extends React.Component {
       },
       localSensors: {
         activeStakes: [
-          { temperature: "90", humidity: "50", waterLevel: "1", id: "0" },
-          { temperature: "91", humidity: "55", waterLevel: "1", id: "1" },
-          { temperature: "95", humidity: "47", waterLevel: "1", id: "2" },
+          { temperature: "96", humidity: "56", waterLevel: "1", id: "0" },
+          { temperature: "99", humidity: "59", waterLevel: "1", id: "1" },
+          { temperature: "90", humidity: "56", waterLevel: "1", id: "2" },
         ],
         overallTemperature: "93",
         overallPrecipitation: "15",
