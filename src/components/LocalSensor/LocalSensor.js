@@ -8,6 +8,12 @@ import "./LocalSensor.css";
 export default class LocalSensor extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      humidityStatus: "STABLE",
+      temperatureStatus: "STABLE",
+      waterLevelStatus: "STABLE",
+    };
     this.renderType = this.renderType.bind(this);
   }
 
@@ -19,7 +25,7 @@ export default class LocalSensor extends Component {
             <div className="sensorIcon">
               <FaHashtag size={40} />
             </div>
-            <div className="sensorData">{this.props.activeStakes}</div>
+            <div className="sensorData">{this.props.activeStakes.length}</div>
           </div>
           <div className="sensorName">Active Stakes</div>
         </div>

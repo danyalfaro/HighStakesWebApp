@@ -30,7 +30,6 @@ const requestOptions = function (lat, lon) {
 
 const handleResponse = function (res) {
   if (res) {
-    console.log(`Handle Response: ${res.temperature}`);
     return res;
   } else {
     console.log("no info returned");

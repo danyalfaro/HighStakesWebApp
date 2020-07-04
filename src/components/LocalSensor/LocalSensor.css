@@ -1,12 +1,21 @@
 .localSensor {
   border-style: solid;
   border-width: 1px;
-  border-radius: 10px;
+  border-radius: 20px;
+  border-color: rgba(255, 255, 255, 0.466);
   height: 100px;
   margin-top: 1vh;
   margin-bottom: 5%;
   padding: 2%;
   position: relative;
+}
+
+.warning {
+  background-color: darkgoldenrod;
+}
+
+.alert {
+  background-color: darkred;
 }
 
 .sensorValues {

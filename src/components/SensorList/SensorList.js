@@ -18,21 +18,21 @@ export default class SensorList extends Component {
             <Col xs={6}>
               <LocalSensor
                 sensorType="stakes"
-                activeStakes={this.props.activeStakes}
+                activeStakes={this.props.localSensors.activeStakes}
               />
               <LocalSensor
                 sensorType="waterLevel"
-                overallWaterLevel={this.props.overallWaterLevel}
+                overallWaterLevel={this.props.localSensors.overallWaterLevel}
               />
             </Col>
             <Col xs={6}>
               <LocalSensor
                 sensorType="temperature"
-                overallTemperature={this.props.overallTemperature}
+                overallTemperature={this.props.localSensors.overallTemperature}
               />
               <LocalSensor
                 sensorType="humidity"
-                overallHumidity={this.props.overallHumidity}
+                overallHumidity={this.props.localSensors.overallHumidity}
               />
             </Col>
           </Row>

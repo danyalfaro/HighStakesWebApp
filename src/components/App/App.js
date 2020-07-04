@@ -5,13 +5,13 @@ import Forecast from "../Forecast/Forecast";
 import SensorList from "../SensorList/SensorList";
 
 import { callCurrentWeather } from "../../lib/simpleCurrentWeather";
+import { calculateStatus } from "../../lib/calculateStatus";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      currentStatus: "STABLE",
       location: {
         currentLatitude: "",
         currentLongitude: "",
@@ -22,14 +22,20 @@ class App extends React.Component {
         cityTemperatureLow: "",
         cityPrecipitation: "",
         cityHumidity: "",
+        timeStamp: "",
       },
       localSensors: {
-        activeStakes: "9",
-        overallTemperature: "85",
+        activeStakes: [
+          { temperature: "90", humidity: "50", waterLevel: "1", id: "0" },
+          { temperature: "91", humidity: "55", waterLevel: "1", id: "1" },
+          { temperature: "95", humidity: "47", waterLevel: "1", id: "2" },
+        ],
+        overallTemperature: "93",
         overallPrecipitation: "15",
         overallHumidity: "40",
         overallWaterLevel: "3",
       },
+      severityArray: [],
     };
   }
 
@@ -55,9 +61,17 @@ class App extends React.Component {
             cityTemperatureLow: data.temperatureMin24Hour,
             cityPrecipitation: data.precip1Hour,
             cityHumidity: data.relativeHumidity,
+            timeStamp: data.validTimeLocal,
           };
+
+          const severityArray = calculateStatus(
+            fromForecast,
+            this.state.localSensors
+          );
+
           this.setState({
             forecast: fromForecast,
+            severityArray: severityArray,
           });
         });
       },
@@ -75,8 +89,9 @@ class App extends React.Component {
       <div className="App">
         <header className="appHeader">High Stakes</header>
         <Status
-          status={this.state.currentStatus}
           forecast={this.state.forecast}
+          localSensors={this.state.localSensors}
+          severityArray={this.state.severityArray}
         />
         <Forecast
           temperature={this.state.forecast.cityTemperature}
@@ -84,11 +99,8 @@ class App extends React.Component {
           humidity={this.state.forecast.cityHumidity}
         />
         <SensorList
-          activeStakes={this.state.localSensors.activeStakes}
-          overallTemperature={this.state.localSensors.overallTemperature}
-          overallPrecipitation={this.state.localSensors.overallPrecipitation}
-          overallHumidity={this.state.localSensors.overallHumidity}
-          overallWaterLevel={this.state.localSensors.overallWaterLevel}
+          localSensors={this.state.localSensors}
+          severityArray={this.state.severityArray}
         />
       </div>
     );

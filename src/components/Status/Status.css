@@ -27,3 +27,8 @@
   margin-left: 5%;
   font-size: 5.5vh;
 }
+
+.statusTimeStamp {
+  margin-top: 5px;
+  color: rgba(255, 255, 255, 0.514);
+}
