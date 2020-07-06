@@ -22,14 +22,15 @@ export default class Status extends Component {
         console.log(statusArray);
 
         let statusResult = "STABLE";
-        statusArray.forEach((val) => {
+        for (let i = 0; i < statusArray.length; i++) {
+          let val = statusArray[i];
           if (val === "ALERT") {
             statusResult = "ALERT";
-            return;
+            break;
           } else if (val === "WARNING") {
             statusResult = "WARNING";
           }
-        });
+        }
         this.setState({ status: statusResult });
       });
     }
