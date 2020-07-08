@@ -11,11 +11,11 @@
 }
 
 .warning {
-  background-color: darkgoldenrod;
+  background-color: rgba(255, 238, 0, 0.548);
 }
 
-.alert {
-  background-color: darkred;
+.alerta {
+  background-color: rgba(255, 0, 0, 0.555);
 }
 
 .sensorValues {

@@ -9,7 +9,7 @@ export function calculateStatus(forecast, localSensor) {
       Number(stake.humidity),
       Number(forecast.cityHumidity)
     );
-    console.log("TESTING, Stake.temperature: ", stake.temperature);
+    // console.log("TESTING, Stake.temperature: ", stake.temperature);
     let waterLevelSeverity = calculateSeverity(Number(stake.waterLevel), 0, 1);
 
     const stakeSeverity = {
@@ -21,7 +21,7 @@ export function calculateStatus(forecast, localSensor) {
 
     severityArray.push(stakeSeverity);
   });
-  console.log(severityArray);
+  // console.log(severityArray);
   return severityArray;
 }
 

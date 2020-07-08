@@ -14,12 +14,12 @@ export default class Status extends Component {
     if (prevProps.severityArray !== this.props.severityArray) {
       let statusArray = [];
       this.props.severityArray.forEach((stake) => {
-        console.log("Current Stake: ", stake);
-        console.log("Starting statusArray: ");
-        console.log(statusArray);
+        // console.log("Current Stake: ", stake);
+        // console.log("Starting statusArray: ");
+        // console.log(statusArray);
         statusArray = statusArray.concat(Object.values(stake));
-        console.log("Ending statusArray: ");
-        console.log(statusArray);
+        // console.log("Ending statusArray: ");
+        // console.log(statusArray);
 
         let statusResult = "STABLE";
         for (let i = 0; i < statusArray.length; i++) {

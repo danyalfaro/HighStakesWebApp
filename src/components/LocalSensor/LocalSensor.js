@@ -10,12 +10,23 @@ export default class LocalSensor extends Component {
     super(props);
 
     this.state = {
-      humidityStatus: "STABLE",
-      temperatureStatus: "STABLE",
-      waterLevelStatus: "STABLE",
+      severity: "STABLE",
     };
     this.renderType = this.renderType.bind(this);
   }
+
+  checkSeverity() {
+    let severity = this.props.severity;
+    if (severity === "ALERT") {
+      return "alerta localSensor";
+    } else if (severity === "WARNING") {
+      return "warning localSensor";
+    } else {
+      return "localSensor";
+    }
+  }
+
+  calculateOverall() {}
 
   renderType() {
     if (this.props.sensorType === "stakes") {
@@ -70,6 +81,6 @@ export default class LocalSensor extends Component {
   }
 
   render() {
-    return <div className="localSensor">{this.renderType()}</div>;
+    return <div className={this.checkSeverity()}>{this.renderType()}</div>;
   }
 }
