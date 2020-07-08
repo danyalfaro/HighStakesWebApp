@@ -12,15 +12,36 @@ export default class SensorList extends Component {
     super(props);
 
     this.state = {
-      overallTemperature: "92",
-      overallHumidity: "23",
-      overallWaterLevel: "1",
+      overallTemperature: "",
+      overallHumidity: "",
+      overallWaterLevel: "",
     };
   }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps !== this.props) {
+      let temperatureSum = 0;
+      let humiditySum = 0;
+      let waterLevelSum = 0;
+      let activeStakes = this.props.localSensors.activeStakes.length;
+      this.props.localSensors.activeStakes.forEach((stake) => {
+        temperatureSum += stake.temperature;
+        humiditySum += stake.humidity;
+        waterLevelSum += stake.waterLevel;
+      });
+      const overall = {
+        overallTemperature: Math.round(temperatureSum / activeStakes),
+        overallHumidity: Math.round(humiditySum / activeStakes),
+        overallWaterLevel: Math.round(waterLevelSum / activeStakes),
+      };
+      this.setState(overall);
+    }
+  }
+
   checkSeverity(sensorType) {
     let statusResult = "STABLE";
     let severityArray = this.props.severityArray;
-    console.log(severityArray);
+    // console.log(severityArray);
     for (let i = 0; i < severityArray.length; i++) {
       let stake = severityArray[i][sensorType];
       if (stake === "ALERT") {

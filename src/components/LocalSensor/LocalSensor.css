@@ -12,10 +12,12 @@
 
 .warning {
   background-color: rgba(255, 238, 0, 0.548);
+  border-style: none;
 }
 
 .alerta {
   background-color: rgba(255, 0, 0, 0.555);
+  border-style: none;
 }
 
 .sensorValues {

@@ -18,9 +18,9 @@ export default class LocalSensor extends Component {
   checkSeverity() {
     let severity = this.props.severity;
     if (severity === "ALERT") {
-      return "alerta localSensor";
+      return "localSensor alerta";
     } else if (severity === "WARNING") {
-      return "warning localSensor";
+      return "localSensor warning";
     } else {
       return "localSensor";
     }
