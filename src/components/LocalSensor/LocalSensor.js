@@ -26,8 +26,6 @@ export default class LocalSensor extends Component {
     }
   }
 
-  calculateOverall() {}
-
   renderType() {
     if (this.props.sensorType === "stakes") {
       return (
@@ -81,6 +79,15 @@ export default class LocalSensor extends Component {
   }
 
   render() {
-    return <div className={this.checkSeverity()}>{this.renderType()}</div>;
+    return (
+      <div
+        className={this.checkSeverity()}
+        onClick={() => {
+          this.props.sensorDetails(this.props.sensorType);
+        }}
+      >
+        {this.renderType()}
+      </div>
+    );
   }
 }

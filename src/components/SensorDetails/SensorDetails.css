@@ -1,0 +1,12 @@
+.sensorDetailsContainer {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 20px;
+  border-color: rgba(255, 255, 255, 0.466);
+  height: 30vh;
+  overflow: scroll;
+}
+
+.backArrow {
+  margin: 10px;
+}

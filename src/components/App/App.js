@@ -26,9 +26,9 @@ class App extends React.Component {
       },
       localSensors: {
         activeStakes: [
-          { temperature: 100, humidity: 90, waterLevel: 1, id: "0" },
-          { temperature: 92, humidity: 66, waterLevel: 1, id: "1" },
-          { temperature: 90, humidity: 65, waterLevel: 1, id: "2" },
+          { temperature: 82, humidity: 61, waterLevel: 1, id: "0" },
+          { temperature: 82, humidity: 61, waterLevel: 1, id: "1" },
+          { temperature: 83, humidity: 59, waterLevel: 1, id: "2" },
         ],
       },
       severityArray: [],
@@ -55,7 +55,7 @@ class App extends React.Component {
             cityTemperature: data.temperature,
             cityTemperatureHigh: data.temperatureMax24Hour,
             cityTemperatureLow: data.temperatureMin24Hour,
-            cityPrecipitation: data.precip6Hour * 100,
+            cityPrecipitation: data.precip24Hour * 100,
             cityHumidity: data.relativeHumidity,
             timeStamp: data.validTimeLocal,
           };
