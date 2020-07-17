@@ -6,6 +6,7 @@
     rgba(35, 44, 64, 100)
   );
   font-family: "Raleway", sans-serif;
+  min-width: 340px;
 }
 
 .appHeader {

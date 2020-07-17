@@ -100,9 +100,6 @@ export default class SensorList extends Component {
                 severity={this.checkSeverity("humiditySeverity")}
                 sensorDetails={this.onSensorDetailClick}
               />
-              {/* <SensorDetails
-                activeStakes={this.props.localSensors.activeStakes}
-              /> */}
             </Col>
           </Row>
         </Container>

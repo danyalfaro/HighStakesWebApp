@@ -3,7 +3,7 @@
   border-width: 1px;
   border-radius: 20px;
   border-color: rgba(255, 255, 255, 0.466);
-  height: 100px;
+  height: 105px;
   margin-top: 1vh;
   margin-bottom: 5%;
   padding: 2%;
@@ -12,11 +12,13 @@
 
 .warning {
   background-color: rgba(255, 238, 0, 0.548);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-style: none;
 }
 
 .alerta {
   background-color: rgba(255, 0, 0, 0.555);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-style: none;
 }
 
@@ -36,13 +38,14 @@
   position: absolute;
   right: 0px;
   width: 50%;
+  padding-bottom: 10px;
   font-size: 200%;
 }
 
 .sensorName {
   position: absolute;
   width: 100%;
-  bottom: 0px;
+  bottom: 8px;
   font-size: 70%;
   text-align: center;
 }
