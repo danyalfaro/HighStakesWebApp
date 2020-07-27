@@ -29,7 +29,7 @@ export default class SensorDetails extends Component {
 
           <div className="sensorDetailsScroll">
             {this.props.activeStakes.map((stake) => {
-              console.log(stake);
+              // console.log(stake);
               return (
                 <IndividualSensor
                   key={stake.id}
