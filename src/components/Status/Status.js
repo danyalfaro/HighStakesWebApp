@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Status.css";
+import { subscribeUser } from "../../subscription";
 
 export default class Status extends Component {
   constructor(props) {
@@ -38,6 +39,7 @@ export default class Status extends Component {
 
   statusColor() {
     if (this.state.status === "ALERT") {
+      subscribeUser();
       return "statusAlert";
     } else if (this.state.status === "WARNING") {
       return "statusWarning";
